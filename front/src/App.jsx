@@ -1,8 +1,4 @@
 import { useState, useEffect, } from 'react';
-import { Link } from "react-router-dom";
-import logo from './assets/hogwarts.png';
-import gryf from './assets/gryfondor.jpg'
-import rawen from './assets/serdaigle.jpg'
 import drop from './assets/caret-down-solid.svg'
 import axios from 'axios';
 import './App.css';
@@ -34,7 +30,7 @@ const fetchPagination = () => {
         res.data.meta.pagination.prev?setPrev(res.data.meta.pagination.prev):console.log("nop")
         ;
       })
-      .catch((err) => console.error(err));}
+      .catch(() => console.error("err"));}
   else{
     return axios
     .get(`http://localhost:3000/real/students?Page=${pageNumber}&house=${filterHouse}`)
@@ -45,7 +41,7 @@ const fetchPagination = () => {
       res.data.meta.pagination.prev?setPrev(res.data.meta.pagination.prev):console.log("nop")
       ;
     })
-    .catch((err) => console.error(err));
+    .catch(() => console.error("err"));
   }
   };
   const testFetchDataFire=()=>{
@@ -54,7 +50,7 @@ const fetchPagination = () => {
     .then((res)=>{
       console.log(res.data)
     })
-    .catch((err)=>{
+    .catch(()=>{
       console.error("pb de core aux pieds")
     })
   }
@@ -70,7 +66,7 @@ const fetchPaginationPrev= () => {
         res.data.meta.pagination.prev?setPrev(res.data.meta.pagination.prev):console.log("nop")
         ;
       })
-      .catch((err) => console.error(err));}
+      .catch(() => console.error("err"));}
   else{
     return axios
     .get(`http://localhost:3000/real/students?Page=${prev}&house=${filterHouse}`)
@@ -81,7 +77,7 @@ const fetchPaginationPrev= () => {
       res.data.meta.pagination.prev?setPrev(res.data.meta.pagination.prev):console.log("nop")
       ;
     })
-    .catch((err) => console.error(err));
+    .catch(() => console.error("err"));
   }
 };
 
@@ -96,7 +92,7 @@ const fetchFiltreHouse= () => {
       res.data.meta.pagination.prev?setPrev(res.data.meta.pagination.prev):console.log("nop")
       ;
     })
-    .catch((err) => console.error(err));
+    .catch(() => console.error("err"));
   }
   else{
     return axios
@@ -108,7 +104,7 @@ const fetchFiltreHouse= () => {
       res.data.meta.pagination.prev?setPrev(res.data.meta.pagination.prev):console.log("nop")
       ;
     })
-    .catch((err) => console.error(err));}
+    .catch(() => console.error("err"));}
 };
 
 useEffect(()=>{
