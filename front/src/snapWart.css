@@ -1,0 +1,65 @@
+@import url('https://fonts.cdnfonts.com/css/harry-potter');
+
+html{
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Harry Potter', sans-serif;
+}
+
+#root{
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%; 
+}
+
+.Snap{
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;   
+}
+.HeaderSnap{
+    background-image: url("./assets/movie-harry_potter-gryffindor-hufflepuff-ravenclaw_harry_potter-slytherin_harry_potter-396547.jpeg");
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+}
+.filtreSnapHeader{
+    background-color: rgba(0, 0, 0, .5);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.SnapWartsTitle{
+    text-align: center;
+    color: white;
+    margin: 0px;
+    font-size: 100px;
+    color: grey;
+}
+.NavSnap{
+    width: 100%;
+    height: 79px;
+    background-color: white;
+    opacity: 0.5;
+    position: fixed;
+    top: 0px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.pN{
+   font-size: 31px;
+}

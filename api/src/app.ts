@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
 import usersRouter from './routes/users';
+import realRouter from './routes/real';
 import dummyRouter from './routes/dummy';
 import errorHandler from './error-handler';
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
 app.use('/dummy', dummyRouter);
+app.use('/real', realRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

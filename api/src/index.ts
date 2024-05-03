@@ -6,9 +6,12 @@
 
 import app from './app';
 import debug from 'debug';
+import { Express } from 'express';
 debug('api:server');
 
 import http from 'http';
+require('dotenv').config()
+
 
 /**
  * Get port from environment and store in Express.
@@ -80,6 +83,24 @@ function onError(error: Error & { syscall: string; code: string }) {
 /**
  * Event listener for HTTP server "listening" event.
  */
+const Firestore = require('@google-cloud/firestore');
+
+export const db = new Firestore({
+  projectId:process.env.PROJECTID ,
+  keyFilename:process.env.FIREBASE_KEY
+});
+
+
+/*const docRef =  db.collection('students').add({
+  first: 'batavia',
+  last: 'rosé',
+  born: 1991
+});;
+
+const docRefUp= db.collection('students').doc('PDG3nNPBRmCXBMZwJGPy')
+const res=  docRefUp.update({born:1987})
+
+//docRef.set*/
 
 function onListening() {
   const addr = server.address();
